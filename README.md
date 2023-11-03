@@ -95,25 +95,3 @@ __Fargate hosted:__
 &nbsp;
 
 &nbsp;
-
-## Your ingress address
-
-__ALB Ingress:__
-
-Once the service stack is deployed check the outputs tab of the ingress stack that you deployed to get the URL to use to access your containers. Note that an external ALB's URL will be accessible to the public from any computer, but an internal ALB's URL will only be accessible if you make the request from an instance inside the VPC, with the appropriate security group. If you want to test spin up a Cloud 9 development environment in the VPC, add its security group to the load balancer's security group and execute a `curl` command.
-
-__Service Discovery Ingress:__
-
-For service discovery things are a little different. The service is available at `<service name>.<domain>` where `domain` is the domain address you entered when you created the service discovery ingress. Once again if you are using a private, internal servicex discovery endpoint the DNS name will only resolve for hosts inside the VPC. You can test this by adding a Cloud 9 development environment to the VPC and executing a command like:
-
-```
-dig +short nginx.service.production
-```
-
-&nbsp;
-
-&nbsp;
-
-## Further customizations
-
-Note that these baseline templates have only HTTP listeners (no SSL support) but this can be easily added to the templates once you create or import an SSL certificate into Amazon Certificate Manager. Additionally, you may want to customize the default autoscaling rules that are embedded in the service template.
