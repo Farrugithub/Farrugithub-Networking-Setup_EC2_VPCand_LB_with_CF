@@ -1,4 +1,4 @@
-# Deploy containers using Elastic Container Service and CloudFormation
+# Deploying containers using Elastic Container Service and CloudFormation
 
 ECS and Fargate give you a lot of control over how you want to deploy containers, and how you would like them to be networked and accessed. This repository contains CloudFormation templates to help you setup several common architectures across both AWS ECS on EC2 and AWS ECS on AWS Fargate.
 
